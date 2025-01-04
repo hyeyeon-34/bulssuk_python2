@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  bulssuk_ai:
+    build:
+      context: ./bulssuk_ai
+      dockerfile: Dockerfile
+    ports:
+      - "8765:8765"
+    container_name: bulssuk_ai_container
+
+  bulssuk_ai_faq:
+    build:
+      context: ./bulssuk_ai_faq
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    container_name: bulssuk_ai_faq_container
+
+  bulssuk_wordcloud:
+    build:
+      context: ./bulssuk_wordCloud
+      dockerfile: Dockerfile
+    ports:
+      - "5002:5002"
+    container_name: bulssuk_wordcloud_container
