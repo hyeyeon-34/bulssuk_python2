@@ -5,6 +5,7 @@ services:
     build:
       context: ./bulssuk_ai
       dockerfile: Dockerfile
+      image: hyeyeon34/bulssuk_ai:latest
     ports:
       - "8765:8765"
     container_name: bulssuk_ai_container
@@ -13,6 +14,7 @@ services:
     build:
       context: ./bulssuk_ai_faq
       dockerfile: Dockerfile
+      image: hyeyeon34/bulssuk_ai_faq:latest
     ports:
       - "5005:5005"
     container_name: bulssuk_ai_faq_container
@@ -21,6 +23,7 @@ services:
     build:
       context: ./bulssuk_wordCloud
       dockerfile: Dockerfile
+      image: hyeyeon34/bulssuk_wordCloud:latest
     ports:
       - "5002:5002"
     container_name: bulssuk_wordcloud_container
