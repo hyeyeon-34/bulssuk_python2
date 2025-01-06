@@ -4,3 +4,4 @@ torch
 ultralytics
 pillow
 pandas
+python-multipart
