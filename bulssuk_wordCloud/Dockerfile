@@ -34,8 +34,8 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # .env 파일 생성
 ARG CLIENT_ID
 ARG CLIENT_SECRET
-RUN echo "CLIENT_ID=$CLIENT_ID" > /app/.env && \
-    echo "CLIENT_SECRET=$CLIENT_SECRET" >> /app/.env
+RUN echo "CLIENT_ID=$CLIENT_ID" > .env && \
+    echo "CLIENT_SECRET=$CLIENT_SECRET" >> .env
     
 # 컨테이너에서 사용할 포트를 명시적으로 선언
 EXPOSE 5002
