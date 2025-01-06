@@ -24,3 +24,6 @@ services:
     ports:
       - "5002:5002"
     container_name: bulssuk_wordcloud_container
+    environment:  # 환경변수 추가
+      - CLIENT_ID=${CLIENT_ID}
+      - CLIENT_SECRET=${CLIENT_SECRET}
