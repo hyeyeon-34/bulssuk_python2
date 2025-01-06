@@ -41,7 +41,7 @@ app = FastAPI()
 try:
     # model = YOLO('/path/to/best.pt')  # 정확한 모델 경로로 수정
     # model = YOLO('/Users/shimgeon-u/Downloads/bulssuk.pt')
-    model = YOLO('/model/bulssuk.pt')
+    model = YOLO('/app/model/bulssuk.pt')
 
     print("YOLO 모델 로드 성공!")
 except Exception as e:
