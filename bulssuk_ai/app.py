@@ -40,13 +40,16 @@ app = FastAPI()
 # YOLO 모델 로드
 try:
     # model = YOLO('/path/to/best.pt')  # 정확한 모델 경로로 수정
-    model = YOLO('/Users/shimgeon-u/Downloads/bulssuk.pt')
+    # model = YOLO('/Users/shimgeon-u/Downloads/bulssuk.pt')
+    model = YOLO('/model/bulssuk.pt')
 
     print("YOLO 모델 로드 성공!")
 except Exception as e:
     print(f"YOLO 모델 로드 실패: {e}")
     traceback.print_exc()
-
+@app.get("/")
+async def root():
+    return {"message": "이미지, 배포 완료!"}
 @app.post("/analyze")
 async def analyze_image(file: UploadFile = File(...)):
     try:
