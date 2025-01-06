@@ -113,10 +113,7 @@ def update_content():
         else:
             logging.error("네이버 뉴스 데이터를 가져오지 못했습니다.")
             
-@app.get("/")
-async def root():
-    return {"message": "워드클라우드, 배포 완료!"}
-    
+
 # 메인 페이지 라우트
 @app.route("/", methods=["GET"])
 def home():
