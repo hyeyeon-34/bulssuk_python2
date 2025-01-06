@@ -22,6 +22,9 @@ RUN find . -name ".DS_Store" -delete || true
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 모델 파일 복사
+COPY bulssuk_ai/model/bulssuk.pt /app/model/bulssuk.pt
+
 # 앱 소스 복사
 COPY . .
 
