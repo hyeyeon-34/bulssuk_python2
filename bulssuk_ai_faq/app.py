@@ -94,6 +94,13 @@ async def check_similarity(request: Request):
     new_question = data["new_question"]
     existing_questions = data["existing_questions"]
 
+    if not existing_questions:
+        return {
+            "is_duplicate": False,
+            "similarity_scores": [],
+            "threshold": 0.8,
+        }
+        
     # 1. 텍스트 임베딩 생성
     all_texts = [new_question] + existing_questions
     embeddings = encode_texts(all_texts)
