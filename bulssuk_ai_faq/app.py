@@ -3,6 +3,7 @@ from fastapi import FastAPI, Request
 from transformers import AutoTokenizer, AutoModel
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import DBSCAN
+from dotenv import load_dotenv
 import torch
 import uvicorn
 import openai
