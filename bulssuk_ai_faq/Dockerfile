@@ -16,6 +16,10 @@ COPY app.py ./
 # 의존성 설치
 RUN pip install --no-cache-dir -r requirements.txt
 
+# .env 파일 생성
+ARG OPENAI_API_KEY
+RUN echo "OPENAI_API_KEY=$OPENAI_API_KEY" > .env
+
 # 컨테이너 내부에서 사용할 포트 지정 (필요한 경우 수정)
 EXPOSE 5005
 
