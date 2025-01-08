@@ -16,9 +16,10 @@ openai.api_key = OPENAI_API_KEY
 
 app = FastAPI()
 
+# 모델 경로와 이름
+model_name = "snunlp/KR-SBERT-V40K-klueNLI-augSTS"
+save_path = "./KR-SBERT-V40K-klueNLI-augSTS"
 
-tokenizer = AutoTokenizer.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
-model = AutoModel.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
 
 if not os.path.exists(save_path):
     os.makedirs(save_path, exist_ok=True)
@@ -28,7 +29,11 @@ if not os.path.exists(save_path):
     model = AutoModel.from_pretrained(model_name)
     model.save_pretrained(save_path)
     print("Model downloaded and saved successfully!")
-    
+
+# 로드된 모델 및 토크나이저
+tokenizer = AutoTokenizer.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
+model = AutoModel.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
+
 # GPT 모델 설정
 gpt_model = "gpt-3.5-turbo"
 
