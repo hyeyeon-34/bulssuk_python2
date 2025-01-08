@@ -20,6 +20,15 @@ app = FastAPI()
 tokenizer = AutoTokenizer.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
 model = AutoModel.from_pretrained("./KR-SBERT-V40K-klueNLI-augSTS")
 
+if not os.path.exists(save_path):
+    os.makedirs(save_path, exist_ok=True)
+    print("Downloading and saving Hugging Face model...")
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+    tokenizer.save_pretrained(save_path)
+    model = AutoModel.from_pretrained(model_name)
+    model.save_pretrained(save_path)
+    print("Model downloaded and saved successfully!")
+    
 # GPT 모델 설정
 gpt_model = "gpt-3.5-turbo"
 
