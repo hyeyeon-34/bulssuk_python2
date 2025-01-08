@@ -16,7 +16,9 @@ services:
     ports:
       - "5005:5005"
     container_name: bulssuk_ai_faq_container
-
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    
   bulssuk_wordcloud:
     build:
       context: ./bulssuk_wordCloud
